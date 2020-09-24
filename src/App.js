@@ -1,15 +1,14 @@
-import React, { useContext } from 'react';
-
+import React from 'react';
 import Nav from './components/Nav';
-import { Store } from './Store';
+import Basket from './components/Basket';
 
 const App = () => {
-  const { state } = useContext(Store);
   const tabs = ['Beans', 'Coke', 'Oranges'];
+
   return (
     <div data-testid="app">
-      <p>Basket App</p>
       <Nav tabs={tabs} />
+      <Basket />
     </div>
   );
 };

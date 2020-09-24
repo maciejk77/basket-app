@@ -1,25 +1,25 @@
 import React from 'react';
 import { render, screen, cleanup } from '@testing-library/react';
-import Button from '../components/Button';
+import Item from '../components/Item';
 
-describe('<Button />', () => {
+describe('<Item />', () => {
   const props = {
-    label: 'First Item',
+    item: 'First Item',
   };
 
   beforeEach(() => {
-    render(<Button {...props} />);
+    render(<Item {...props} />);
   });
 
   afterEach(cleanup);
 
   it('should render without crashing', () => {
-    const element = screen.getByTestId('button');
+    const element = screen.getByTestId('item');
     expect(element).toBeInTheDocument();
   });
 
-  it('should render a button with label', () => {
-    const element = screen.getByText(props.label);
+  it('should render an item with label', () => {
+    const element = screen.getByText(props.item);
     expect(element).toBeInTheDocument();
   });
 });
