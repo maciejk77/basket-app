@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Button = ({ label }) => {
-  return <div style={styles.buttonStyles}>{label}</div>;
+  return (
+    <div style={styles.buttonStyles} data-testid="button">
+      {label}
+    </div>
+  );
 };
 
 const styles = {
