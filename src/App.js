@@ -1,19 +1,16 @@
 import React, { Fragment, useContext } from 'react';
-import Button from './components/Button';
+
 import Nav from './components/Nav';
 import { Store } from './Store';
 
 const App = () => {
   const { state } = useContext(Store);
+  const tabs = ['Beans', 'Coke', 'Oranges'];
   return (
-    <>
+    <div className="app">
       <p>Basket App</p>
-      <Nav>
-        <Button label="Coke" />
-        <Button label="Beans" />
-        <Button label="Oranges" />
-      </Nav>
-    </>
+      <Nav tabs={tabs} />
+    </div>
   );
 };
 
