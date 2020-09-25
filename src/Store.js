@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from 'react';
+import { reducer } from './reducers';
 
 const initialState = {
   basket: [],
@@ -7,7 +8,7 @@ const initialState = {
 export const StoreContext = createContext(initialState);
 
 export function StoreProvider({ children }) {
-  const [state, dispatch] = useReducer(null, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <StoreContext.Provider value={{ state, dispatch }}>

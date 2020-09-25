@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
 import Item from '../Item';
 import { StoreContext } from '../../Store';
+import { getItemPrice } from '../../utils';
 
 const Basket = () => {
   const { state } = useContext(StoreContext);
 
   return (
     <div data-testid="basket">
-      {state.basket.map((item, index) => (
-        <Item item={item} key={index} />
-      ))}
+      {state.basket.map((itemName, index) => {
+        const price = getItemPrice(itemName);
+        return <Item name={itemName} price={price} key={index} index={index} />;
+      })}
     </div>
   );
 };

@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { StoreContext } from '../../Store';
+import { ADD_ITEM } from '../../constants';
 
 const Button = ({ label }) => {
+  const { dispatch } = useContext(StoreContext);
   return (
-    <div style={styles.buttonStyles} data-testid="button">
+    <div
+      value={label}
+      style={styles.buttonStyles}
+      data-testid="button"
+      onClick={() => dispatch({ type: ADD_ITEM, payload: label })}
+    >
       {label}
     </div>
   );
