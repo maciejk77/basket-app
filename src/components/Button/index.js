@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { StoreContext } from '../../Store';
 import { ADD_ITEM } from '../../constants';
+import { getItemPrice } from '../../utils';
 
 const Button = ({ label }) => {
   const { dispatch } = useContext(StoreContext);
@@ -9,7 +10,9 @@ const Button = ({ label }) => {
       value={label}
       style={styles.buttonStyles}
       data-testid="button"
-      onClick={() => dispatch({ type: ADD_ITEM, payload: label })}
+      onClick={() =>
+        dispatch({ type: ADD_ITEM, payload: label, price: getItemPrice(label) })
+      }
     >
       {label}
     </div>

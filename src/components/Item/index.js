@@ -13,7 +13,7 @@ const Item = ({ name, index, price }) => {
       </div>
       <div
         style={styles.removeStyle}
-        onClick={() => dispatch({ type: REMOVE_ITEM, payload: index })}
+        onClick={() => dispatch({ type: REMOVE_ITEM, payload: index, price })}
       >
         x
       </div>

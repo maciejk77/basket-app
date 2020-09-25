@@ -1,16 +1,15 @@
 import React, { useContext } from 'react';
 import { StoreContext } from '../../Store';
-import { mapBasketItems, getSubTotal } from '../../utils';
 
 const SubTotal = () => {
   const { state } = useContext(StoreContext);
-  const mappedBasket = mapBasketItems(state.basket);
-  const subTotal = getSubTotal(mappedBasket);
+
   return (
-    subTotal > 0 && (
+    state.subTotal > 0 && (
       <div style={styles.subTotalStyle}>
         <div>Sub-total</div>
-        <div>{`£${(subTotal / 100).toFixed(2)}`}</div>
+
+        <div>{`£${(state.subTotal / 100).toFixed(2)}`}</div>
       </div>
     )
   );
