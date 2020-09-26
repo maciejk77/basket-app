@@ -4,6 +4,7 @@ import { reducer } from './reducers';
 const initialState = {
   basket: [],
   subTotal: 0,
+  discountTotal: 0,
 };
 
 export const StoreContext = createContext(initialState);
