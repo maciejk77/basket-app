@@ -20,7 +20,7 @@ const styles = {
   subTotalStyle: {
     display: 'flex',
     justifyContent: 'space-between',
-    border: '2px dashed black',
+    border: '2px solid black',
     padding: 10,
     width: 300,
   },

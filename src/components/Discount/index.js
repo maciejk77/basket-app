@@ -8,8 +8,6 @@ const Discount = () => {
   const discountedItems = getDiscounts(state.basket);
   if (!discountedItems) return null;
 
-  console.log(discountedItems);
-
   const totalSavings =
     discountedItems.length &&
     discountedItems
@@ -37,8 +35,8 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    borderTop: '2px solid black',
-    marginTop: 15,
+    border: '2px solid gray',
+    marginTop: 5,
     padding: 10,
     width: 300,
   },

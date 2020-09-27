@@ -1,6 +1,6 @@
 import { products } from './constants';
 
-export const toDecimal = (number) => (number / 100).toFixed(2);
+export const toDecimal = (number) => (Number(number) / 100).toFixed(2);
 
 export const getItemPrice = (item) =>
   products.filter((p) => p.name === item)[0].price;
@@ -19,7 +19,11 @@ export const getDiscounts = (basket) => {
   const mappedItems = mapBasketItems(basket);
   const basketKeys = Object.keys(mappedItems);
 
-  return basketKeys.map((item) => {
+  const discountedBasketKeys = basketKeys.filter(
+    (bk) => products.filter((p) => p.name === bk)[0].discount !== undefined
+  );
+
+  return discountedBasketKeys.map((item) => {
     const itemCount = mappedItems[item];
     const discountItem = discountedProducts.filter((p) => p.name === item)[0]
       .discount;
@@ -36,3 +40,7 @@ export const getDiscounts = (basket) => {
     return { promoLabel, itemDiscount };
   });
 };
+
+export const totalSavings = (discountedItems) =>
+  discountedItems.length &&
+  discountedItems.map((el) => el.itemDiscount).reduce((acc, num) => acc + num);
