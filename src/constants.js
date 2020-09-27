@@ -5,6 +5,7 @@ export const products = [
     name: 'Beans',
     price: 50,
     discount: {
+      promoLabel: 'Beans 3 for 2',
       itemsCount: 3,
       value: 50,
     },
@@ -13,6 +14,7 @@ export const products = [
     name: 'Coke',
     price: 70,
     discount: {
+      promoLabel: 'Coke 2 for £1',
       itemsCount: 2,
       value: 40,
     },

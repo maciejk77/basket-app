@@ -5,7 +5,6 @@ import { getItemPrice } from '../../utils';
 
 const Basket = () => {
   const { state } = useContext(StoreContext);
-  console.log(state);
 
   return (
     <div data-testid="basket">

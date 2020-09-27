@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { REMOVE_ITEM } from '../../constants';
 import { StoreContext } from '../../Store';
+import { toDecimal } from '../../utils';
 
 const Item = ({ name, index, price }) => {
   const { dispatch } = useContext(StoreContext);
@@ -9,7 +10,7 @@ const Item = ({ name, index, price }) => {
     <div style={styles.containerStyle}>
       <div data-testid="item" style={styles.itemStyle}>
         <div>{name}</div>
-        <div>{`£${(price / 100).toFixed(2)}`}</div>
+        <div>{`£${toDecimal(price)}`}</div>
       </div>
       <div
         style={styles.removeStyle}

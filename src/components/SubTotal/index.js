@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { StoreContext } from '../../Store';
+import { toDecimal } from '../../utils';
 
 const SubTotal = () => {
   const { state } = useContext(StoreContext);
@@ -9,7 +10,7 @@ const SubTotal = () => {
       <div style={styles.subTotalStyle}>
         <div>Sub-total</div>
 
-        <div>{`£${(state.subTotal / 100).toFixed(2)}`}</div>
+        <div>{`£${toDecimal(state.subTotal)}`}</div>
       </div>
     )
   );
