@@ -15,7 +15,7 @@ const Discount = () => {
       .reduce((acc, num) => acc + num);
 
   return (
-    <div style={styles.discountStyle}>
+    <div style={styles.discountStyle} data-testid="discount">
       {discountedItems.map(({ itemDiscount, promoLabel }, idx) => (
         <div key={idx} style={styles.itemDiscountStyle}>
           <div>{promoLabel}</div>

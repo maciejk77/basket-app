@@ -13,6 +13,7 @@ const Item = ({ name, index, price }) => {
         <div>{`£${toDecimal(price)}`}</div>
       </div>
       <div
+        data-testid="item-remove"
         style={styles.removeStyle}
         onClick={() => dispatch({ type: REMOVE_ITEM, payload: index, price })}
       >
