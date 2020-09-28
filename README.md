@@ -2,7 +2,7 @@
 
 ### Screenshot
 
-![Screenshot](src/assets/screenshot.png)
+<img src="src/assets/screenshot.png" width="200">
 
 ### Completed
 
