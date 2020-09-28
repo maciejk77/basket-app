@@ -7,9 +7,10 @@
 - show discount applied (3x beans => 50p, 2x Coke => 40p)
 - show total to pay after discount if any
 
+Click here for [**live app**](https://5f722b220428fd55988b28a8--basket-app-4t5345345-test.netlify.app/)
+
 ### Screenshot
 
-Click here for [**live app**](https://5f722b220428fd55988b28a8--basket-app-4t5345345-test.netlify.app/)
 <img src="src/assets/screenshot.png" width="400">
 
 ### Completed
