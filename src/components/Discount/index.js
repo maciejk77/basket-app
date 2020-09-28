@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { StoreContext } from '../../Store';
 import { getDiscounts, toDecimal } from '../../utils';
+import useStyles from './styles';
 
 const Discount = () => {
   const { state } = useContext(StoreContext);
-
+  const { discountStyle, itemDiscountStyle, totalSavingsStyle } = useStyles();
   const discountedItems = getDiscounts(state.basket);
   if (!discountedItems) return null;
 
@@ -15,39 +16,19 @@ const Discount = () => {
       .reduce((acc, num) => acc + num);
 
   return (
-    <div style={styles.discountStyle} data-testid="discount">
+    <div className={discountStyle} data-testid="discount">
       {discountedItems.map(({ itemDiscount, promoLabel }, idx) => (
-        <div key={idx} style={styles.itemDiscountStyle}>
+        <div key={idx} className={itemDiscountStyle}>
           <div>{promoLabel}</div>
           <div>{`-£${toDecimal(itemDiscount)}`}</div>
         </div>
       ))}
-      <div style={styles.totalSavingsStyle}>
+      <div className={totalSavingsStyle}>
         <div>Total savings</div>
         <div>{totalSavings ? `-£${toDecimal(totalSavings)}` : 'N/A'}</div>
       </div>
     </div>
   );
-};
-
-const styles = {
-  discountStyle: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    border: '2px solid gray',
-    marginTop: 5,
-    padding: 10,
-    width: 300,
-  },
-  itemDiscountStyle: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  totalSavingsStyle: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
 };
 
 export default Discount;

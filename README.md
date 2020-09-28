@@ -1,5 +1,9 @@
 ## Basket App
 
+### Screenshot
+
+![Screenshot](src/assets/screenshot.png)
+
 ### Completed
 
 - some tests
