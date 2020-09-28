@@ -54,5 +54,4 @@ describe('<SubTotal />', () => {
     const element = screen.getByText(/£1.60/i);
     expect(element).toBeInTheDocument();
   });
-};);
-
+});
