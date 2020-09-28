@@ -4,16 +4,18 @@ import Basket from '../components/Basket';
 import { StoreProvider } from '../Store';
 
 describe('<Basket />', () => {
-  let state;
-
   beforeEach(() => {
-    state = {
-      basket: [],
-    };
-
     render(
-      <StoreProvider value={state.basket}>
-        <Basket />
+      <StoreProvider
+        value={{
+          state: {
+            basket: [],
+            subTotal: 0,
+          },
+          dispatch: () => {},
+        }}
+      >
+        <Basket />)
       </StoreProvider>
     );
   });
@@ -24,24 +26,11 @@ describe('<Basket />', () => {
     const element = screen.getByTestId('basket');
     expect(element).toBeInTheDocument();
   });
-
-  it('should render empty basket', () => {
-    for (const item of state.basket) {
-      const element = screen.getAllByText(item);
-      expect(element).toBeInTheDocument();
-    }
-  });
-
-  it('should render basket items', () => {
-    state = {
-      basket: ['Foo', 'Bar', 'Baz'],
-    };
-
-    for (const item of state.basket) {
-      const element = screen.getByTextId(item);
-      expect(element).toBeInTheDocument();
-    }
-  });
-
-  it('should add items to the basket', () => {});
 });
+
+// should add items to basket
+////// check length of items in the basket type
+/////  check if the value sub total is correct, discount is correct, total to pay is correct
+///// try diff scenarios
+
+// repeat tests for various scenarious when removing items after adding

@@ -5,13 +5,14 @@ import { getItemPrice } from '../../utils';
 
 const Button = ({ label }) => {
   const { dispatch } = useContext(StoreContext);
+  const itemPrice = getItemPrice(label);
   return (
     <div
       value={label}
       style={styles.buttonStyles}
       data-testid="button"
       onClick={() =>
-        dispatch({ type: ADD_ITEM, payload: label, price: getItemPrice(label) })
+        dispatch({ type: ADD_ITEM, payload: label, price: itemPrice })
       }
     >
       {label}

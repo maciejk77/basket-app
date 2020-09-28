@@ -6,13 +6,11 @@ const SubTotal = () => {
   const { state } = useContext(StoreContext);
 
   return (
-    state.subTotal > 0 && (
-      <div style={styles.subTotalStyle}>
-        <div>Sub-total</div>
+    <div style={styles.subTotalStyle} data-testid="sub-total">
+      <div>Sub-total</div>
 
-        <div>{`£${toDecimal(state.subTotal)}`}</div>
-      </div>
-    )
+      <div>{`£${toDecimal(state.subTotal)}`}</div>
+    </div>
   );
 };
 

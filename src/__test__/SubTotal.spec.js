@@ -1,13 +1,10 @@
 import React from 'react';
 import { render, screen, cleanup } from '@testing-library/react';
-import Item from '../components/Item';
+import SubTotal from '../components/SubTotal';
 import { StoreProvider } from '../Store';
 
-describe('<Item />', () => {
-  const props = {
-    name: 'Foo',
-    price: 100,
-  };
+describe('<SubTotal />', () => {
+  const state = { subTotal: 0 };
 
   beforeEach(() => {
     render(
@@ -20,7 +17,7 @@ describe('<Item />', () => {
           dispatch: () => {},
         }}
       >
-        <Item {...props} />)
+        <SubTotal {...state} />)
       </StoreProvider>
     );
   });
@@ -28,15 +25,16 @@ describe('<Item />', () => {
   afterEach(cleanup);
 
   it('should render without crashing', () => {
-    const element = screen.getByTestId('item');
-    expect(element).toBeInTheDocument();
-  });
-
-  it('should render an item with label', () => {
-    const element = screen.getByText(props.name);
+    const element = screen.getByTestId('sub-total');
     expect(element).toBeInTheDocument();
   });
 });
 
-// should render with item unit price
+// should render a container with 'Sub-total'
+// should show £0.00 with empty basket
+// should show correct sum with items in the basket
+////////// add beans, coke, oranges?
+
 // should call dispatch onClick
+// should show curent sum if item is REMOVED removed from basket
+////////// add beans, coke, oranges, remove oranges?
