@@ -54,7 +54,4 @@ describe('<TotalPay />', () => {
     const element = screen.getByText(/£1.60/i);
     expect(element).toBeInTheDocument();
   });
-
-  // should call dispatch onClick
-  // should show current sum if item is REMOVED removed from basket
 });
