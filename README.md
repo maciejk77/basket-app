@@ -2,7 +2,7 @@
 
 ### Screenshot
 
-<img src="src/assets/screenshot.png" width="200">
+<img src="src/assets/screenshot.png" width="400">
 
 ### Completed
 
