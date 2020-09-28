@@ -1,5 +1,12 @@
 ## Basket App
 
+### Basket app functionality
+
+- add/remove items
+- show current sub-total
+- show discount applied (3x beans => 50p, 2x Coke => 40p)
+- show total to pay after discount if any
+
 ### Screenshot
 
 <img src="src/assets/screenshot.png" width="400">
